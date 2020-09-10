@@ -1,0 +1,87 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30128.74
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Socket", "Socket", "{72C7514C-FE27-4329-92DA-94711C14F5CE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RPC", "RPC", "{901E6EF4-AD21-4779-8AAD-1CE493B0A15F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessageBrocker.Sockets.Sender", "src\Socket\MessageBrocker.Socket.Sender\MessageBrocker.Sockets.Sender.csproj", "{6F14FB27-9279-4522-A105-D747F692BAF9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessageBrocker.Sockets.Receiver", "src\Socket\MessageBrocker.Socket.Receiver\MessageBrocker.Sockets.Receiver.csproj", "{A186883E-9B95-4A70-8AEF-0E719A2020A6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessageBrocker.Sockets.Brocker", "src\Socket\MessageBrocker.Socket.Brocker\MessageBrocker.Sockets.Brocker.csproj", "{CD3FC955-82D7-4BAF-A3B2-CA29388ACE00}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessageBrocker.Sockets.Shared", "src\Socket\MessageBrocker.Socket.Shared\MessageBrocker.Sockets.Shared.csproj", "{3D09C504-BFEC-485E-BA87-E9EF6C634538}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessageBrocker.RPC.Brocker", "src\RPC\MessageBrocker.RPC.Brocker\MessageBrocker.RPC.Brocker.csproj", "{7FE61884-2764-43E9-9226-E3497CF56BDA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessageBrocker.RPC.Sender", "src\RPC\MessageBrocker.RPC.Sender\MessageBrocker.RPC.Sender.csproj", "{7ADD196D-C153-4650-A825-D983143E9978}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessageBrocker.RPC.Receiver", "src\RPC\MessageBrocker.RPC.Receiver\MessageBrocker.RPC.Receiver.csproj", "{3BEE4091-2D4C-4F57-882F-E4FB617D6496}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessageBrocker.RPC.Shared", "src\RPC\MessageBrocker.RPC.Shared\MessageBrocker.RPC.Shared.csproj", "{091A2DE6-C204-48AC-85C3-865300B17FB9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessageBrocker.Core", "src\MessageBrocker.Core\MessageBrocker.Core.csproj", "{D5059E55-1F19-4355-9737-A215046F7A43}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6F14FB27-9279-4522-A105-D747F692BAF9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F14FB27-9279-4522-A105-D747F692BAF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F14FB27-9279-4522-A105-D747F692BAF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F14FB27-9279-4522-A105-D747F692BAF9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A186883E-9B95-4A70-8AEF-0E719A2020A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A186883E-9B95-4A70-8AEF-0E719A2020A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A186883E-9B95-4A70-8AEF-0E719A2020A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A186883E-9B95-4A70-8AEF-0E719A2020A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD3FC955-82D7-4BAF-A3B2-CA29388ACE00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD3FC955-82D7-4BAF-A3B2-CA29388ACE00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD3FC955-82D7-4BAF-A3B2-CA29388ACE00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD3FC955-82D7-4BAF-A3B2-CA29388ACE00}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D09C504-BFEC-485E-BA87-E9EF6C634538}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D09C504-BFEC-485E-BA87-E9EF6C634538}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D09C504-BFEC-485E-BA87-E9EF6C634538}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D09C504-BFEC-485E-BA87-E9EF6C634538}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7FE61884-2764-43E9-9226-E3497CF56BDA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7FE61884-2764-43E9-9226-E3497CF56BDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7FE61884-2764-43E9-9226-E3497CF56BDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7FE61884-2764-43E9-9226-E3497CF56BDA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7ADD196D-C153-4650-A825-D983143E9978}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7ADD196D-C153-4650-A825-D983143E9978}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7ADD196D-C153-4650-A825-D983143E9978}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7ADD196D-C153-4650-A825-D983143E9978}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3BEE4091-2D4C-4F57-882F-E4FB617D6496}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3BEE4091-2D4C-4F57-882F-E4FB617D6496}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3BEE4091-2D4C-4F57-882F-E4FB617D6496}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3BEE4091-2D4C-4F57-882F-E4FB617D6496}.Release|Any CPU.Build.0 = Release|Any CPU
+		{091A2DE6-C204-48AC-85C3-865300B17FB9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{091A2DE6-C204-48AC-85C3-865300B17FB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{091A2DE6-C204-48AC-85C3-865300B17FB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{091A2DE6-C204-48AC-85C3-865300B17FB9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5059E55-1F19-4355-9737-A215046F7A43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5059E55-1F19-4355-9737-A215046F7A43}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5059E55-1F19-4355-9737-A215046F7A43}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5059E55-1F19-4355-9737-A215046F7A43}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{6F14FB27-9279-4522-A105-D747F692BAF9} = {72C7514C-FE27-4329-92DA-94711C14F5CE}
+		{A186883E-9B95-4A70-8AEF-0E719A2020A6} = {72C7514C-FE27-4329-92DA-94711C14F5CE}
+		{CD3FC955-82D7-4BAF-A3B2-CA29388ACE00} = {72C7514C-FE27-4329-92DA-94711C14F5CE}
+		{3D09C504-BFEC-485E-BA87-E9EF6C634538} = {72C7514C-FE27-4329-92DA-94711C14F5CE}
+		{7FE61884-2764-43E9-9226-E3497CF56BDA} = {901E6EF4-AD21-4779-8AAD-1CE493B0A15F}
+		{7ADD196D-C153-4650-A825-D983143E9978} = {901E6EF4-AD21-4779-8AAD-1CE493B0A15F}
+		{3BEE4091-2D4C-4F57-882F-E4FB617D6496} = {901E6EF4-AD21-4779-8AAD-1CE493B0A15F}
+		{091A2DE6-C204-48AC-85C3-865300B17FB9} = {901E6EF4-AD21-4779-8AAD-1CE493B0A15F}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {306523DA-90E5-4359-ACD9-FF917C16490B}
+	EndGlobalSection
+EndGlobal
