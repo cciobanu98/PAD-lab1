@@ -20,7 +20,8 @@ namespace MessageBrocker.RPC.Receiver.Implimentations
         }
         public async Task<bool> Subscribe(string topic)
         {
-            Channel channel = new Channel(_options.Value.Host, ChannelCredentials.Insecure);
+            var secureChanel = new SslCredentials();
+            Channel channel = new Channel(_options.Value.Host, secureChanel);
             Subscription.SubscriptionClient client = new Subscription.SubscriptionClient(channel);
 
             var restult = await client.SubscribeAsync(new SubscribeRequest() { Topic = topic });
@@ -30,7 +31,8 @@ namespace MessageBrocker.RPC.Receiver.Implimentations
 
         public async Task<bool> Unsubscribe(string topic)
         {
-            Channel channel = new Channel(_options.Value.Host, ChannelCredentials.Insecure);
+            var secureChanel = new SslCredentials();
+            Channel channel = new Channel(_options.Value.Host, secureChanel);
             Subscription.SubscriptionClient client = new Subscription.SubscriptionClient(channel);
 
             var restult = await client.UnsubscribeAsync(new UnsubscribeRequest() { Topic = topic });
