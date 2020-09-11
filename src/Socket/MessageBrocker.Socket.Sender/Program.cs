@@ -1,4 +1,5 @@
 ﻿using MessageBrocker.Core.Abstract;
+using MessageBrocker.Core.Messages;
 using MessageBrocker.Sockets.Shared.Options;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -30,9 +31,15 @@ namespace MessageBrocker.Sockets.Sender
             var provider = services.BuildServiceProvider();
             var sender = provider.GetRequiredService<Sender>();
             sender.Connect();
-            if (sender.IsConnected())
+            while (true)
             {
-                Console.WriteLine("UUUU");
+                Console.WriteLine("Send message");
+                Console.Write("Topic: ");
+                var topic = Console.ReadLine();
+                Console.Write("Message: ");
+                var message = Console.ReadLine();
+                var msg = new Message(topic, message);
+                sender.Send(msg);
             }
         }
         private static IConfiguration LoadConfiguration()

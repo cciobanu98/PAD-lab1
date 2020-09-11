@@ -7,6 +7,8 @@ using System.Net;
 using System.Net.Sockets;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
+using System.Text;
+using System.Text.Json;
 using System.Threading;
 
 namespace MessageBrocker.Sockets.Shared.Abstract
@@ -22,38 +24,64 @@ namespace MessageBrocker.Sockets.Shared.Abstract
             Socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
             Options = options;
         }
-
-        protected T Get<T>(Socket socket) where T : Message
+        public void Receive()
         {
             try
             {
-                using (var stream = new NetworkStream(socket))
-                {
-                    IFormatter formatter = new BinaryFormatter();
-                    T message = (T)formatter.Deserialize(stream);
-                    return message;
-                }
+                var state = new SocketState(Socket);
+                Socket.BeginReceive(state.Buffer, 0, SocketState.BufferSize, 0,
+                        new AsyncCallback(ReceiveCallback), state);
             }
             catch (Exception e)
             {
-                Logger.LogError($"Error on receive meessage {e.Message}");
+                Logger.LogError("Error on receive: {msg}", e.Message);
             }
-            return null;
         }
 
-        protected void Send<T>(Socket socket, T message) where T : Message
+        public void Send<T>(Socket socket, T data) where T: class
         {
+            var json = JsonSerializer.Serialize(data);
+            Send(socket, json);
+        }
+
+        public void Send(Socket socket, string data)
+        {
+            var bytes = Encoding.UTF8.GetBytes(data);
+            socket.Send(bytes);
+        }
+
+        protected virtual void HandleMessage(string message, Socket socket)
+        {
+
+        }
+
+        protected void ReceiveCallback(IAsyncResult ar)
+        {
+            SocketState state = (SocketState)ar.AsyncState;
+            Socket handler = state.Socket;
             try
             {
-                using (var stream = new NetworkStream(socket))
+                // Read data from the client socket.  
+                int read = handler.EndReceive(ar);
+
+                // Data was read from the client socket.  
+                if (read > 0)
                 {
-                    IFormatter formatter = new BinaryFormatter();
-                    formatter.Serialize(stream, message);
+                    state.StringBuilder.Append(Encoding.ASCII.GetString(state.Buffer, 0, read));
                 }
+                if (read < SocketState.BufferSize)
+                {
+                    var message = state.StringBuilder.ToString();
+                    HandleMessage(message, handler);
+                    state.StringBuilder = new StringBuilder();
+                }
+                handler.BeginReceive(state.Buffer, 0, SocketState.BufferSize, 0,
+                     new AsyncCallback(ReceiveCallback), state);
             }
             catch (Exception e)
             {
-                Logger.LogError("sendMessage exception: " + e.Message);
+                Logger.LogError("Error: {msg}", e.Message);
+                handler.Close();
             }
         }
     }

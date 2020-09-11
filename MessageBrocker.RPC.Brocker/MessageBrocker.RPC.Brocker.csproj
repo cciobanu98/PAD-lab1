@@ -9,8 +9,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\MessageBrocker.RPC.Shared\MessageBrocker.RPC.Shared.csproj" />
-    <ProjectReference Include="..\..\MessageBrocker.Core\MessageBrocker.Core.csproj" />
+    <ProjectReference Include="..\MessageBrocker.RPC.Shared\MessageBrocker.RPC.Shared.csproj" />
+    <ProjectReference Include="..\src\MessageBrocker.Core\MessageBrocker.Core.csproj" />
   </ItemGroup>
 
 </Project>

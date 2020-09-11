@@ -7,23 +7,23 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Socket", "Socket", "{72C751
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RPC", "RPC", "{901E6EF4-AD21-4779-8AAD-1CE493B0A15F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessageBrocker.Sockets.Sender", "src\Socket\MessageBrocker.Socket.Sender\MessageBrocker.Sockets.Sender.csproj", "{6F14FB27-9279-4522-A105-D747F692BAF9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MessageBrocker.Sockets.Sender", "src\Socket\MessageBrocker.Socket.Sender\MessageBrocker.Sockets.Sender.csproj", "{6F14FB27-9279-4522-A105-D747F692BAF9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessageBrocker.Sockets.Receiver", "src\Socket\MessageBrocker.Socket.Receiver\MessageBrocker.Sockets.Receiver.csproj", "{A186883E-9B95-4A70-8AEF-0E719A2020A6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MessageBrocker.Sockets.Receiver", "src\Socket\MessageBrocker.Socket.Receiver\MessageBrocker.Sockets.Receiver.csproj", "{A186883E-9B95-4A70-8AEF-0E719A2020A6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessageBrocker.Sockets.Brocker", "src\Socket\MessageBrocker.Socket.Brocker\MessageBrocker.Sockets.Brocker.csproj", "{CD3FC955-82D7-4BAF-A3B2-CA29388ACE00}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MessageBrocker.Sockets.Brocker", "src\Socket\MessageBrocker.Socket.Brocker\MessageBrocker.Sockets.Brocker.csproj", "{CD3FC955-82D7-4BAF-A3B2-CA29388ACE00}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessageBrocker.Sockets.Shared", "src\Socket\MessageBrocker.Socket.Shared\MessageBrocker.Sockets.Shared.csproj", "{3D09C504-BFEC-485E-BA87-E9EF6C634538}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MessageBrocker.Sockets.Shared", "src\Socket\MessageBrocker.Socket.Shared\MessageBrocker.Sockets.Shared.csproj", "{3D09C504-BFEC-485E-BA87-E9EF6C634538}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessageBrocker.RPC.Brocker", "src\RPC\MessageBrocker.RPC.Brocker\MessageBrocker.RPC.Brocker.csproj", "{7FE61884-2764-43E9-9226-E3497CF56BDA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MessageBrocker.Core", "src\MessageBrocker.Core\MessageBrocker.Core.csproj", "{D5059E55-1F19-4355-9737-A215046F7A43}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessageBrocker.RPC.Sender", "src\RPC\MessageBrocker.RPC.Sender\MessageBrocker.RPC.Sender.csproj", "{7ADD196D-C153-4650-A825-D983143E9978}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessageBrocker.RPC.Brocker", "MessageBrocker.RPC.Brocker\MessageBrocker.RPC.Brocker.csproj", "{2777F9EC-4F5F-4BB5-92A3-0FF94DEF2804}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessageBrocker.RPC.Receiver", "src\RPC\MessageBrocker.RPC.Receiver\MessageBrocker.RPC.Receiver.csproj", "{3BEE4091-2D4C-4F57-882F-E4FB617D6496}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessageBrocker.RPC.Receiver", "src\RPC\MessageBrocker.RPC.Receiver\MessageBrocker.RPC.Receiver.csproj", "{67629637-F582-4559-94F9-F0E167D3A665}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessageBrocker.RPC.Shared", "src\RPC\MessageBrocker.RPC.Shared\MessageBrocker.RPC.Shared.csproj", "{091A2DE6-C204-48AC-85C3-865300B17FB9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessageBrocker.RPC.Shared", "MessageBrocker.RPC.Shared\MessageBrocker.RPC.Shared.csproj", "{C7827D9A-BB77-4329-A3D4-FBE227A2DD0E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessageBrocker.Core", "src\MessageBrocker.Core\MessageBrocker.Core.csproj", "{D5059E55-1F19-4355-9737-A215046F7A43}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessageBrocker.RPC.Sender", "src\RPC\MessageBrocker.RPC.Sender\MessageBrocker.RPC.Sender.csproj", "{490809DD-FB04-44C2-B71D-240B69322494}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,26 +47,26 @@ Global
 		{3D09C504-BFEC-485E-BA87-E9EF6C634538}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3D09C504-BFEC-485E-BA87-E9EF6C634538}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3D09C504-BFEC-485E-BA87-E9EF6C634538}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7FE61884-2764-43E9-9226-E3497CF56BDA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7FE61884-2764-43E9-9226-E3497CF56BDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7FE61884-2764-43E9-9226-E3497CF56BDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7FE61884-2764-43E9-9226-E3497CF56BDA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7ADD196D-C153-4650-A825-D983143E9978}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7ADD196D-C153-4650-A825-D983143E9978}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7ADD196D-C153-4650-A825-D983143E9978}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7ADD196D-C153-4650-A825-D983143E9978}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3BEE4091-2D4C-4F57-882F-E4FB617D6496}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3BEE4091-2D4C-4F57-882F-E4FB617D6496}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3BEE4091-2D4C-4F57-882F-E4FB617D6496}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3BEE4091-2D4C-4F57-882F-E4FB617D6496}.Release|Any CPU.Build.0 = Release|Any CPU
-		{091A2DE6-C204-48AC-85C3-865300B17FB9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{091A2DE6-C204-48AC-85C3-865300B17FB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{091A2DE6-C204-48AC-85C3-865300B17FB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{091A2DE6-C204-48AC-85C3-865300B17FB9}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D5059E55-1F19-4355-9737-A215046F7A43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D5059E55-1F19-4355-9737-A215046F7A43}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D5059E55-1F19-4355-9737-A215046F7A43}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D5059E55-1F19-4355-9737-A215046F7A43}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2777F9EC-4F5F-4BB5-92A3-0FF94DEF2804}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2777F9EC-4F5F-4BB5-92A3-0FF94DEF2804}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2777F9EC-4F5F-4BB5-92A3-0FF94DEF2804}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2777F9EC-4F5F-4BB5-92A3-0FF94DEF2804}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67629637-F582-4559-94F9-F0E167D3A665}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67629637-F582-4559-94F9-F0E167D3A665}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67629637-F582-4559-94F9-F0E167D3A665}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67629637-F582-4559-94F9-F0E167D3A665}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7827D9A-BB77-4329-A3D4-FBE227A2DD0E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7827D9A-BB77-4329-A3D4-FBE227A2DD0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7827D9A-BB77-4329-A3D4-FBE227A2DD0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7827D9A-BB77-4329-A3D4-FBE227A2DD0E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{490809DD-FB04-44C2-B71D-240B69322494}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{490809DD-FB04-44C2-B71D-240B69322494}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{490809DD-FB04-44C2-B71D-240B69322494}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{490809DD-FB04-44C2-B71D-240B69322494}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -76,10 +76,10 @@ Global
 		{A186883E-9B95-4A70-8AEF-0E719A2020A6} = {72C7514C-FE27-4329-92DA-94711C14F5CE}
 		{CD3FC955-82D7-4BAF-A3B2-CA29388ACE00} = {72C7514C-FE27-4329-92DA-94711C14F5CE}
 		{3D09C504-BFEC-485E-BA87-E9EF6C634538} = {72C7514C-FE27-4329-92DA-94711C14F5CE}
-		{7FE61884-2764-43E9-9226-E3497CF56BDA} = {901E6EF4-AD21-4779-8AAD-1CE493B0A15F}
-		{7ADD196D-C153-4650-A825-D983143E9978} = {901E6EF4-AD21-4779-8AAD-1CE493B0A15F}
-		{3BEE4091-2D4C-4F57-882F-E4FB617D6496} = {901E6EF4-AD21-4779-8AAD-1CE493B0A15F}
-		{091A2DE6-C204-48AC-85C3-865300B17FB9} = {901E6EF4-AD21-4779-8AAD-1CE493B0A15F}
+		{2777F9EC-4F5F-4BB5-92A3-0FF94DEF2804} = {901E6EF4-AD21-4779-8AAD-1CE493B0A15F}
+		{67629637-F582-4559-94F9-F0E167D3A665} = {901E6EF4-AD21-4779-8AAD-1CE493B0A15F}
+		{C7827D9A-BB77-4329-A3D4-FBE227A2DD0E} = {901E6EF4-AD21-4779-8AAD-1CE493B0A15F}
+		{490809DD-FB04-44C2-B71D-240B69322494} = {901E6EF4-AD21-4779-8AAD-1CE493B0A15F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {306523DA-90E5-4359-ACD9-FF917C16490B}

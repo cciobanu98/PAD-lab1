@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+option csharp_namespace = "MessageBrocker.RPC.Shared";
+
+package client;
+
+// The greeting service definition.
+service Client {
+  // Sends a greeting
+  rpc Send (SendRequest) returns (SendReply);
+}
+
+message SendRequest {
+	string topic = 1;
+	string data = 2;
+}
+
+message SendReply {
+	bool success = 1;
+}

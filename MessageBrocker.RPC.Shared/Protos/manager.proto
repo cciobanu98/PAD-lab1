@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+option csharp_namespace = "MessageBrocker.RPC.Shared";
+
+package manager;
+
+// The greeting service definition.
+service Subscription {
+  // Sends a greeting
+  rpc Subscribe (SubscribeRequest) returns (SubscriptionReply);
+  rpc Unsubscribe (UnsubscribeRequest) returns (SubscriptionReply);
+}
+
+service Sender {
+	rpc Send (MessageRequest) returns (MessageReply);
+}
+// The request message containing the user's name.
+message SubscribeRequest {
+  string topic = 1;
+}
+
+message UnsubscribeRequest {
+  string topic = 1;
+}
+
+// The response message containing the greetings.
+message SubscriptionReply {
+  bool success = 1;
+}
+
+message MessageRequest {
+	string topic = 1;
+	string data = 2;
+}
+
+message MessageReply {
+	bool success = 1;
+}

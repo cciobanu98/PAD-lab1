@@ -7,6 +7,8 @@ using Microsoft.Extensions.Options;
 using System;
 using System.Net;
 using System.Net.Sockets;
+using System.Text;
+using System.Text.Json;
 using System.Threading;
 
 namespace MessageBrocker.Sockets.Sender

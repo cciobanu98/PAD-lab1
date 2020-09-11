@@ -1,11 +1,12 @@
-﻿using MessageBrocker.Socket.Receiver.Options;
+﻿using MessageBrocker.Sockets.Shared.Options;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using System;
 using System.IO;
+using System.Threading;
 
-namespace MessageBrocker.Socket.Receiver
+namespace MessageBrocker.Sockets.Receiver
 {
     class Program
     {
@@ -18,7 +19,7 @@ namespace MessageBrocker.Socket.Receiver
                     .AddSingleton(config)
                     .AddTransient<Receiver>();
 
-            services.AddOptions<ReceiverOptions>()
+            services.AddOptions<SocketOptions>()
               .Configure<IConfiguration>((settings, configuration) =>
               {
                   configuration.Bind(settings);
@@ -26,7 +27,14 @@ namespace MessageBrocker.Socket.Receiver
 
             var provider = services.BuildServiceProvider();
             var receiver = provider.GetRequiredService<Receiver>();
-            receiver.Run();
+            receiver.Connect();
+            new Thread(receiver.Receive).Start();
+            while(true)
+            {
+                Console.Write("Subscribe to topic: ");
+                var topic = Console.ReadLine();
+                receiver.Subscribe(topic);
+            }
         }
         private static IConfiguration LoadConfiguration()
         {

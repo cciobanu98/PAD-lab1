@@ -1,7 +1,6 @@
 ﻿using MessageBrocker.Core.Abstract;
 using MessageBrocker.Core.Messages;
 using MessageBrocker.Sockets.Brocker.Options;
-using MessageBrocker.Sockets.Brocker.Storage;
 using MessageBrocker.Sockets.Shared.Options;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -21,7 +20,7 @@ namespace MessageBrocker.Sockets.Brocker
             services.AddLogging(configure => configure.AddConsole())
                     .AddSingleton(config)
                     .AddSingleton<IQueueStorage<Message>, QueueStorage<Message>>()
-                    .AddSingleton<IListStorage<ReceiverInformation>, ListStorage<ReceiverInformation>>()
+                    .AddSingleton<IListStorage<Subscriber>, ListStorage<Subscriber>>()
                     .AddSingleton<Brocker>();
 
             services.AddOptions<BrockerOptions>()
@@ -41,6 +40,7 @@ namespace MessageBrocker.Sockets.Brocker
 
             brocker.Start();
             new Thread(brocker.Accept).Start();
+            new Thread(brocker.Send).Start();
         }
         private static IConfiguration LoadConfiguration()
         {
