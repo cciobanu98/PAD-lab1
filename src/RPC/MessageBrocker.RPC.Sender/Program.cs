@@ -1,14 +1,15 @@
 ﻿using Grpc.Core;
 using MessageBrocker.RPC.Shared;
 using System;
+using System.Threading.Tasks;
 
 namespace MessageBrocker.RPC.Senders
 {
     class Program
     {
-        static async void MainAsync(string[] args)
+        static async Task MainAsync(string[] args)
         {
-            Channel channel = new Channel("https://localhost:5001", ChannelCredentials.Insecure);
+            Channel channel = new Channel("localhost:5001", ChannelCredentials.Insecure);
             Sender.SenderClient sender = new Sender.SenderClient(channel);
             while (true)
             {
@@ -24,7 +25,7 @@ namespace MessageBrocker.RPC.Senders
         }
         static void Main(string[] args)
         {
-            MainAsync(args);
+            MainAsync(args).Wait();
         }
     }
 }

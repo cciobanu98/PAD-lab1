@@ -26,7 +26,14 @@ namespace MessageBrocker.RPC.Receiver
              {
                  configuration.Bind(settings);
              });
+
+            services.AddOptions<LocalhostOptions>()
+             .Configure<IConfiguration>((settings, configuration) =>
+             {
+                 configuration.Bind(settings);
+             });
             services.AddTransient<ISubscriber, Subscriber>();
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

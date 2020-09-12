@@ -17,10 +17,12 @@ service Sender {
 // The request message containing the user's name.
 message SubscribeRequest {
   string topic = 1;
+  string host = 2;
 }
 
 message UnsubscribeRequest {
   string topic = 1;
+  string host = 2;
 }
 
 // The response message containing the greetings.

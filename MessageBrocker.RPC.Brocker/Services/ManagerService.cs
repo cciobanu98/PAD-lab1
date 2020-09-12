@@ -23,14 +23,14 @@ namespace MessageBrocker.RPC.Brocker
         {
             try
             {
-                var subscriber = _storage.GetAll().Where(x => x.Value.Topic == request.Topic && x.Value.Host == context.Host).Select(x => x.Value).FirstOrDefault();
+                var subscriber = _storage.GetAll().Where(x => x.Value.Topic == request.Topic && x.Value.Host == request.Host).Select(x => x.Value).FirstOrDefault();
                 if (subscriber != null)
                 {
-                    _logger.LogWarning("Subscriber: {sub} it's already subscribed to topic: {topic}", context.Host, request.Topic);
+                    _logger.LogWarning("Subscriber: {sub} it's already subscribed to topic: {topic}", request.Host, request.Topic);
                     return Task.FromResult(new SubscriptionReply() { Success = false });
                 }
-                _logger.LogInformation("Subscriber: {sub} it's added to topic: {topic}", context.Host, request.Topic);
-                _storage.Add(new Subscriber(request.Topic, context.Host));
+                _logger.LogInformation("Subscriber: {sub} it's added to topic: {topic}", request.Host, request.Topic);
+                _storage.Add(new Subscriber(request.Topic, request.Host));
                 return Task.FromResult(new SubscriptionReply() { Success = true });
             }
             catch (Exception e)
@@ -44,13 +44,13 @@ namespace MessageBrocker.RPC.Brocker
         {
             try
             {
-                var subscriber = _storage.GetAll().Where(x => x.Value.Topic == request.Topic && x.Value.Host == context.Host).FirstOrDefault();
+                var subscriber = _storage.GetAll().Where(x => x.Value.Topic == request.Topic && x.Value.Host == request.Host).FirstOrDefault();
                 if (subscriber.Value == null)
                 {
-                    _logger.LogWarning("Subscriber: {sub} for topic {topic} not found: ", context.Host, request.Topic);
+                    _logger.LogWarning("Subscriber: {sub} for topic {topic} not found: ", request.Host, request.Topic);
                     return Task.FromResult(new SubscriptionReply() { Success = false });
                 }
-                _logger.LogInformation("Subscriber: {sub} it's removed from topic: {topic}", context.Host, request.Topic);
+                _logger.LogInformation("Subscriber: {sub} it's removed from topic: {topic}", request.Host, request.Topic);
                 _storage.Remove(subscriber.Key);
                 return Task.FromResult(new SubscriptionReply() { Success = true });
             }
